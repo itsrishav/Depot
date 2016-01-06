@@ -26,7 +26,7 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    product = Product.find(params[:product_id])
+    product = Product.cached_find(params[:product_id])
     @line_item = @cart.add_product(product.id)
     
     respond_to do |format|
@@ -68,7 +68,7 @@ class LineItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_line_item
-      @line_item = LineItem.find(params[:id])
+      @line_item = LineItem.includes(:product).cached_find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

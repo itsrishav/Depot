@@ -4,7 +4,7 @@ class CartsController < ApplicationController
   # GET /carts
   # GET /carts.json
   def index
-    @carts = Cart.all
+    @carts = Cart.cached_all
   end
 
   # GET /carts/1
@@ -66,7 +66,7 @@ class CartsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
-      @cart = Cart.find(params[:id])
+      @cart = Cart.cached_find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

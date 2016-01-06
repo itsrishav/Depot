@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.cached_all
   end
 
   # GET /products/1
@@ -64,7 +64,7 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.cache_find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
