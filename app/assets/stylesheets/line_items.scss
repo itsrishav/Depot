@@ -1,3 +1,26 @@
 // Place all the styles related to the LineItems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.add_to_cart{
+	background-color: #DB4105;
+	box-shadow: 0px 3px 5px #000;
+	-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+  transition: 300ms;
+	&:hover {
+		box-shadow: none;
+		background-color: #DB4105 - 20;
+		transform: scale(0.98);
+	}
+}
+
+.callout{
+	-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+  transition: 300ms;
+	&:hover {
+		box-shadow: 0px 3px 10px #aaa;
+		transform: scale(1.02);
+	}
+}

@@ -5,8 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Product.delete_all
-Product.create!(title: 'CoffeeScript',
+Product.find_or_create_by!(title: 'CoffeeScript',
   description: 
     %{<p>
         CoffeeScript is JavaScript done right. It provides all of JavaScript's
@@ -18,7 +17,7 @@ Product.create!(title: 'CoffeeScript',
   image_url:   'cs.jpg',    
   price: 36.00)
 # . . .
-Product.create!(title: 'Programming Ruby 1.9 & 2.0',
+Product.find_or_create_by!(title: 'Programming Ruby 1.9 & 2.0',
   description:
     %{<p>
         Ruby is the fastest growing and most exciting dynamic language
@@ -29,7 +28,7 @@ Product.create!(title: 'Programming Ruby 1.9 & 2.0',
   price: 49.95)
 # . . .
 
-Product.create!(title: 'Rails Test Prescriptions',
+Product.find_or_create_by!(title: 'Rails Test Prescriptions',
   description: 
     %{<p>
         <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
@@ -41,3 +40,4 @@ Product.create!(title: 'Rails Test Prescriptions',
       </p>},
   image_url: 'rtp.jpg',
   price: 34.95)
+#User.find_or_create_by!(name: 'rishav', password: 'josh123')

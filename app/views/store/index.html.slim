@@ -1,0 +1,22 @@
+- if notice
+  p#notice
+    = notice
+h1
+  | Your Pragmatic Catalog
+- cache ['store', Product.cached_latest] do
+  - @products.each do |product|
+    - cache ['entry', product] do
+      
+      .callout
+        .row
+          .entry
+          .large-3.columns
+            = image_tag(product.image_url) 
+          h3
+          .large-9.columns
+            = product.title
+            = sanitize(product.description)     
+          .price_line
+            span.price
+              = number_to_currency(product.price)
+              = button_to 'Add to Cart', line_items_path(product_id: product), remote: true, class: 'button add_to_cart'

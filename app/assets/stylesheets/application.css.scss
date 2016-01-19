@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+//= require foundation_and_overrides
+
  */
 #banner {
 	background: #9c9;
@@ -104,5 +106,12 @@
 				display: none
 			}
 		}
+	}
+}
+
+.top-bar{
+	a{
+		color: white;
+		text-decoration: none;
 	}
 }
