@@ -23,7 +23,6 @@
   .field
     = f.label :pay_type
     br
-    = f.select :pay_type, Order::PAYMENT_TYPES,
-    -       prompt: 'Select a payment method'
+    = f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Select a payment method'
   .actions
     = f.submit 'Place Order'
