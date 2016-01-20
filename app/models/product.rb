@@ -26,7 +26,7 @@ class Product < ActiveRecord::Base
 
 	def flush_cache
 		Rails.cache.delete([self.class.name, id])
-		Rails.cache.delete([self.name, 'order_title'])
+		Rails.cache.delete([self.class.name, 'order_title'])
 		Rails.cache.delete([self.class.name, 'all'])
 	end
 
